@@ -352,6 +352,7 @@
 #undef CONFIG_FPGA
 #endif
 
+
 /* Address in RAM where the parameters must be copied by SPL. */
 #define CONFIG_SYS_SPL_ARGS_ADDR	0x10000000
 

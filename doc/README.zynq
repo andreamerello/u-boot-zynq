@@ -21,6 +21,7 @@ and I/O programmability.
 * zc706 (dual parallel qspi, gem0, mmc) [2]
 * zed (single qspi, gem0, mmc) [3]
 * microzed (single qspi, gem0, mmc) [4]
+* zturn (single qspi, gem0, mmc) [6]
 * zc770
   - zc770-xm010 (single qspi, gem0, mmc)
   - zc770-xm011 (8 or 16 bit nand)
@@ -81,6 +82,7 @@ bootmode strings at runtime.
 [3] http://zedboard.org/product/zedboard
 [4] http://zedboard.org/product/microzed
 [5] http://www.xilinx.com/support/documentation/user_guides/ug585-Zynq-7000-TRM.pdf
+[6] http://http://www.myirtech.com/soft.asp?id=903
 
 --
 Jagannadha Sutradharudu Teki <jaganna@xilinx.com>
