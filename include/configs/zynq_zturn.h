@@ -8,6 +8,8 @@
 #ifndef __CONFIG_ZYNQ_ZTURN_H
 #define __CONFIG_ZYNQ_ZTURN_H
 
+#define CONFIG_ZYNQ_ZTURN
+
 #define CONFIG_SYS_SDRAM_SIZE          (1024 * 1024 * 1024)
 
 #define CONFIG_ZYNQ_SERIAL_UART1

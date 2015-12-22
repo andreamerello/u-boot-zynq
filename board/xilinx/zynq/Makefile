@@ -7,6 +7,11 @@
 
 obj-y	:= board.o
 
+ifdef CONFIG_TARGET_ZYNQ_ZTURN
+# Added by -=FD=- for zturn myir
+obj-y	+= myir_init.o
+endif 
+
 # Please copy ps7_init_gpl.c/h from hw project to this directory
 obj-$(CONFIG_SPL_BUILD) += \
 		$(if $(wildcard $(srctree)/$(src)/ps7_init_gpl.c), ps7_init_gpl.o, \

@@ -29,6 +29,11 @@ static xilinx_desc fpga045 = XILINX_XC7Z045_DESC(0x45);
 static xilinx_desc fpga100 = XILINX_XC7Z100_DESC(0x100);
 #endif
 
+#ifdef CONFIG_ZYNQ_ZTURN
+/* Added by -=FD=- for zturn myir */
+extern int myir_board_init(void);
+#endif
+
 int board_init(void)
 {
 #if defined(CONFIG_ENV_IS_IN_EEPROM) && !defined(CONFIG_SPL_BUILD)
@@ -74,6 +79,12 @@ int board_init(void)
 	if (eeprom_write(CONFIG_SYS_I2C_MUX_ADDR, 0, &eepromsel, 1))
 		puts("I2C:EEPROM selection failed\n");
 #endif
+
+#ifdef CONFIG_ZYNQ_ZTURN
+	/* Added by -=FD=- for zturn_myir */
+	myir_board_init();
+#endif
+
 	return 0;
 }
 
@@ -106,7 +117,12 @@ int board_late_init(void)
 #ifdef CONFIG_DISPLAY_BOARDINFO
 int checkboard(void)
 {
+#ifdef CONFIG_ZYNQ_ZTURN
+/* Added by -=FD=- for zturn myir */
+	puts("Board:\tZturn Myir\n");
+#else    
 	puts("Board:\tXilinx Zynq\n");
+#endif
 	return 0;
 }
 #endif
