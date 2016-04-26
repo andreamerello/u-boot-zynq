@@ -376,9 +376,6 @@
 					CONFIG_SYS_SPI_ARGS_SIZE)
 #endif
 
-/* for booting directly linux */
-#define CONFIG_SPL_OS_BOOT
-
 /* SP location before relocation, must use scratch RAM */
 #define CONFIG_SPL_TEXT_BASE	0x0
 
