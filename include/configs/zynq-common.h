@@ -376,6 +376,9 @@
 					CONFIG_SYS_SPI_ARGS_SIZE)
 #endif
 
+/* for booting old good zImages */
+#define CONFIG_CMD_BOOTZ
+
 /* SP location before relocation, must use scratch RAM */
 #define CONFIG_SPL_TEXT_BASE	0x0
 
