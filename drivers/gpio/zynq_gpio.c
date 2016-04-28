@@ -15,6 +15,7 @@
 #include <asm/errno.h>
 #include <dm.h>
 #include <fdtdec.h>
+#include <dt-bindings/gpio/gpio.h>
 
 DECLARE_GLOBAL_DATA_PTR;
 
@@ -299,11 +300,20 @@ static int zynq_gpio_direction_output(struct udevice *dev, unsigned gpio,
 	return 0;
 }
 
+static int zynq_gpio_xlate(struct udevice *dev, struct gpio_desc *desc,
+			    struct fdtdec_phandle_args *args)
+{
+	desc->flags = args->args[1] & GPIO_ACTIVE_LOW ? GPIOD_ACTIVE_LOW : 0;
+
+	return 0;
+}
+
 static const struct dm_gpio_ops gpio_zynq_ops = {
 	.direction_input	= zynq_gpio_direction_input,
 	.direction_output	= zynq_gpio_direction_output,
 	.get_value		= zynq_gpio_get_value,
 	.set_value		= zynq_gpio_set_value,
+	.xlate			= zynq_gpio_xlate,
 };
 
 static const struct udevice_id zynq_gpio_ids[] = {
