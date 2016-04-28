@@ -10,6 +10,7 @@
 
 /dts-v1/;
 #include "zynq-7000.dtsi"
+#include <dt-bindings/gpio/gpio.h>
 
 / {
 	model = "Zynq Zturn Board";
@@ -19,6 +20,10 @@
 		serial0 = &uart1;
 		ethernet0 = &gem0;
 		mmc0 = &sdhci0;
+	};
+
+	board {
+		phys-reset-gpio = <&gpio0 51 GPIO_ACTIVE_LOW>;
 	};
 
 	memory {
