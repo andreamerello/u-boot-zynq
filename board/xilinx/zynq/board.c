@@ -84,7 +84,7 @@ int phys_reset(void)
 		return nodeoffset;
 
 	gpio_request_by_name_nodev(blob, nodeoffset, "phys-reset-gpio", 0,
-				   &reset_gpio, 0);
+				&reset_gpio, 0);
 
 	if (dm_gpio_is_valid(&reset_gpio)) {
 		/* reset PHYs (ethernet and USB) before any driver comes up */
